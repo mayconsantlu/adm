@@ -1,0 +1,6 @@
+<?php
+/**
+ * Ajuda
+ */
+
+echo 'Help';
