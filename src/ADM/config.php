@@ -33,5 +33,7 @@ $rotas = array(
     "cria_secao" => "Inserindo as seções ao site",
     "altera_secao" => "Alterando as seções do site",
     "configuracoes" => "Configurações",
+    "clientes" => "Listagem de clientes cadastrados no Site",
+    "contato" => "Dados de contato da sua empresa no Site",
     "404" => "404 - Página não encontrada"
 );

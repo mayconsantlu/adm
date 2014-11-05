@@ -18,7 +18,13 @@
                         <a href="formularios">Formulários</a>
                     </li>
                     <li>
-                        <a href="portfolio">Portfólio</a>
+                        <a href="portfolio">Produtos / Serviços</a>
+                    </li>
+                    <li>
+                        <a href="clientes">Clientes</a>
+                    </li>
+                    <li>
+                        <a href="contato">Contato</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right padding-rigth">

@@ -18,11 +18,12 @@ if (!empty($_POST)) {
         if (!empty($_POST['titulo'])) {
             $titulo         = $_POST['titulo'];
             $texto          = $_POST['texto'];
+            $metadesc       = $_POST['metadesc'];
             $slug           = slug($_POST['titulo']);
             //echo $titulo."\n";
             //echo $texto;
             //$sql1 = "insert into tbl_galerias (titulo, obs, data_evento, cadastro) values ('$titulo', '$obs', '$data_evento', now())";
-            $sql1 = "update tbl_paginas set titulo = '$titulo', slug = '$slug', texto = '$texto' where id = '$editar'";
+            $sql1 = "update tbl_paginas set titulo = '$titulo', slug = '$slug', metadesc = '$metadesc', texto = '$texto' where id = '$editar'";
             $stmt = $conexao->prepare($sql1);
             //$stmt -> bindValue('editar', $editar);
             $stmt->execute();
@@ -40,6 +41,7 @@ if (!empty($_POST)) {
     $titulo         = "";
     $texto          = "";
     $slug           = "";
+    $metadesc       = "";
 }
 
 
@@ -94,9 +96,12 @@ if (!empty($_POST)) {
         </div>
         <div class="row clearfix">
             <div class="col-md-4 column">
-                <h3>Ttitulo para a página</h3>
+                <h3>Titulo para a página</h3>
                 <input id="titulo" name="titulo" type="text" style="width: 100%" placeholder="Digite o titulo da galeria" class="form-control" value="<?php echo $resultado['titulo']; ?>" >
                 <span class="help-block">* Titulo que será apresentado no topo da página</span>
+                <h3>Insira uma descrição para a página</h3>
+                <input id="metadesc" name="metadesc" type="text" style="width: 100%" placeholder="Digite a descriçao da página" class="form-control" value="<?php echo $resultado['metadesc']; ?>" >
+                <span class="help-block">* Descrição utilizado pelos buscadores, ex: Google.</span>
             </div>
             <div class="col-md-8 column">
                 <h3>Texto da página.</h3>

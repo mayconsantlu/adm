@@ -65,16 +65,22 @@ if ($getUrl != "") {
         }
 */
  //<!-- titulo e url -->
+//pega info do site
+$site = "Select * from tbl_config";
+$stmt = $conexao -> prepare($site);
+$stmt -> execute();
+$pegasite = $stmt -> fetch(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Adm-{Site}</title>
+  <title>Adm - <?php echo $pegasite['titulo']; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="Maycon Luczynski">
+  <meta name="robots" content="noindex, nofollow">
 
 	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
 	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
