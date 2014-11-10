@@ -35,5 +35,8 @@ $rotas = array(
     "configuracoes" => "Configurações",
     "clientes" => "Listagem de clientes cadastrados no Site",
     "contato" => "Dados de contato da sua empresa no Site",
+    "novo_cliente" => "Inserir novo cliente",
+    "altera_cliente" => "Alterando cadastro de cliente",
+    "apaga_cliente" => "Excluir cadastro de cliente",
     "404" => "404 - Página não encontrada"
 );

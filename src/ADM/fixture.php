@@ -170,8 +170,10 @@ $conexao -> query("create table if not exists tbl_clientes
                  (  id integer unsigned auto_increment not null,
                     nome varchar(200) not null,
                     cnpj varchar(20) not null,
+                    contato varchar(200) null,
                     email varchar(200) not null,
                     telefone varchar(300) null,
+                    obs text null,
                     cadastro datetime not null,
                     primary key (id));");
 
@@ -180,11 +182,13 @@ $conexao -> query("truncate table tbl_clientes;");
 // Informando os dados
 $nome = "nome do cliente";
 $cnpj = "00.000.000/0000-0";
+$contato = "Pessoa de contato";
 $email = "email@email.com.br";
 $telefone = "41 99420273";
+$obs = "Bom cliente ou mau cliente, quem sabe né";
 //Criando as páginas de teste
 //$cadastro = date("Y");
-$sql9 = "insert into tbl_clientes (nome, cnpj, email, telefone, cadastro) values ('$nome', '$cnpj', '$email', '$telefone',now())";
+$sql9 = "insert into tbl_clientes (nome, cnpj, contato, email, telefone, obs, cadastro) values ('$nome', '$cnpj', '$contato', '$email', '$telefone','$obs', now())";
 $stmt = $conexao->prepare($sql9);
 $stmt->execute();
 echo 'Passou cliente'."\n";
@@ -197,7 +201,7 @@ $conexao -> query("create table if not exists tbl_contato
                     endereco varchar(250) null,
                     numero varchar(30) null,
                     complemento varchar(150) null,
-                    bairro varhar(100) null,
+                    bairro varchar(100) null,
                     cidade varchar(200) null,
                     estado varchar(5) null,
                     contato varchar(200) null,

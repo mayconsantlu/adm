@@ -214,10 +214,22 @@ $pegasite = $stmt -> fetch(PDO::FETCH_ASSOC);
 
                         imageUploadParams: {id: "texto"}
                     });
+               // $("#cnpj").mask("99.999.999/9999-99");
+                   // $("#data").mask("99/99/9999");
 
             });
         </script>
+<!-- Mascara de campos -->
+<!--script type="text/javascript" src="js/jquery-1.2.6.pack.js"-->
+</script><script type="text/javascript" src="js/jquery.maskedinput-1.1.4.pack.js"/></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#cnpj").mask("99.999.999/9999-99"),
+        $("#data").mask("99/99/9999"),
+        $("#telefone").mask("99.9999.9999");
+    });
 
+</script>
 
 </body>
 </html>

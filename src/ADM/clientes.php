@@ -32,8 +32,10 @@ $stmt -> execute();
         <th>#</th>
         <th>Nome/Razão</th>
         <th>CNPJ</th>
+        <th>Pessoa de contato</th>
         <th>email</th>
         <th>telefone</th>
+        <th>Obs:</th>
         <th>ação</th>
     </tr>
     </thead>
@@ -50,8 +52,10 @@ $stmt -> execute();
             <td><?php echo $resultado['id']; ?></td>
             <td><?php echo $resultado['nome']; ?></td>
             <td><?php echo $resultado['cnpj']; ?></td>
+            <td><?php echo $resultado['contato']; ?></td>
             <td><?php echo $resultado['email']; ?></td>
             <td><?php echo $resultado['telefone']; ?></td>
+            <td><?php echo $resultado['obs']; ?></td>
             <td>
                 <a class="btn btn-warning btn-sm" href="altera_cliente?editar=<?php echo $resultado['id']; ?>" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
                 <a class="btn btn-danger btn-sm" href="apaga_cliente?apagar=<?php echo $resultado['id']; ?>" title="Excluir"><span class="glyphicon glyphicon-remove"></span></a>

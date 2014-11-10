@@ -78,7 +78,7 @@ if (!empty($_POST)) {
             <input id="titulo" name="titulo" type="text" style="width: 100%" placeholder="Digite o titulo da galeria" class="form-control" value="<?php echo $titulo; ?>" >
             <span class="help-block">* Nome do evento que as fotos foram tiradas</span>
             <h3>Insira a data do evento</h3>
-            <input id="data" name="data" type="date" style="width: 100%" placeholder="Digite a data do evento" class="form-control" value="<?php echo $data_evento; ?>" >
+            <input id="data" name="data" type="text" style="width: 100%" placeholder="Digite a data do evento dd/mm/aaaa" class="form-control" value="<?php echo $data_evento; ?>" >
             <span class="help-block">* Data em que o evento foi realizado</span>
         </div>
         <div class="col-md-8 column">
