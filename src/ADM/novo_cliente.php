@@ -92,7 +92,7 @@ if (!empty($_POST)) {
 				<h3>e-mail</h3>
                 <input id="email" name="email" type="email" style="width: 100%" placeholder="Digite o e-mail do cliente" class="form-control" value="<?php echo $email; ?>" >
 				<h3>Telefone</h3>
-                <input id="telefone" name="telefone" type="text" style="width: 100%" placeholder="Telefone" class="form-control" value="<?php echo $telefone; ?>" >
+                <input id="telefone" name="telefone" type="tel" style="width: 100%" placeholder="Telefone" class="form-control" value="<?php echo $telefone; ?>" >
                 <h3>Observação</h3>
                 <textarea class="form-control" cols="10" style="width: 100%" id="texto" name="texto"><?php echo $obs; ?></textarea>
             </div>

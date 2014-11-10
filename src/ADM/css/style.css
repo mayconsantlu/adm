@@ -10,7 +10,8 @@ footer {background-color: #222; color: #ffffff; margin-bottom: 0px; padding: 10p
 .t-color {background-color: #607F83; color: #FFFFFF;}/* #1c4f64 */
 .max {width: 100px;}
 .min {width: 50px;}
-
+.padding {padding: 5px;}
+.border {background-color: #f3f3f3; border: solid #cccccc 1px;}
 
 .min-height {
     min-height: 600px;
