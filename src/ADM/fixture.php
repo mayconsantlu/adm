@@ -231,3 +231,29 @@ $sqlc = "insert into tbl_contato (nome, endereco, numero, complemento, bairro, t
 $stmt = $conexao->prepare($sqlc);
 $stmt->execute();
 echo 'Passou contato'."\n";
+
+// cria produto serviço
+// verifica se a tabela existe e cria se não existir
+$conexao -> query("create table if not exists tbl_produtos
+                 (  id integer unsigned auto_increment not null,
+                    titulo varchar(200) null,
+                    imagem varchar(250) null,
+                    descricao text null,
+                    link varchar(200) null,
+                    valor decimal(5,2) null,
+                    cadastro datetime not null,
+                    primary key (id));");
+
+// Limpando a tabela;
+$conexao -> query("truncate table tbl_produtos;");
+// Informando os dados
+$titulo = "Titulo do produto";
+$imagem = "galerias/uploads/sem-imagem.jpg";
+$descricao = "Descrição do produto ou serviço";
+$link = "http://linkdoprotudoouservico.com.br/meuproduto";
+$valor = "120.90";
+//$cadastro = date("Y");
+$sqlc2 = "insert into tbl_produtos (titulo, imagem, descricao, link, valor, cadastro) values ('$titulo', '$imagem', '$descricao', '$link', '$valor', now())";
+$stmt = $conexao->prepare($sqlc2);
+$stmt->execute();
+echo 'Passou produto'."\n";
