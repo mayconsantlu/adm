@@ -240,7 +240,7 @@ $conexao -> query("create table if not exists tbl_produtos
                     imagem varchar(250) null,
                     descricao text null,
                     link varchar(200) null,
-                    valor decimal(5,2) null,
+                    valor decimal(10,2) null,
                     cadastro datetime not null,
                     primary key (id));");
 
@@ -248,9 +248,9 @@ $conexao -> query("create table if not exists tbl_produtos
 $conexao -> query("truncate table tbl_produtos;");
 // Informando os dados
 $titulo = "Titulo do produto";
-$imagem = "galerias/uploads/sem-imagem.jpg";
+$imagem = "galeria/uploads/sem-imagem.jpg";
 $descricao = "Descrição do produto ou serviço";
-$link = "http://linkdoprotudoouservico.com.br/meuproduto";
+$link = "";
 $valor = "120.90";
 //$cadastro = date("Y");
 $sqlc2 = "insert into tbl_produtos (titulo, imagem, descricao, link, valor, cadastro) values ('$titulo', '$imagem', '$descricao', '$link', '$valor', now())";

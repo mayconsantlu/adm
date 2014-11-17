@@ -27,7 +27,7 @@ else{
 	<body>
 <div class="topo">
     <h3 class="centrer">Inserindo fotos para a galeria: <?php echo $_SESSION['galeria']." - ".$titulo; ?> - <a href="/galerias">Cancelar / Voltar</a></h3>
-    <h4 class="centrer">OBS: Imagens de até 2MB</h4>
+    <h4 class="centrer">OBS: Imagens de até 5MB</h4>
 </div>
 		<form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
 			<div id="drop">

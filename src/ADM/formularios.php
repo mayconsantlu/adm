@@ -57,7 +57,7 @@ if (!empty($_POST)) {
     </h1>
 </div>
 <div class="help-tip">
-    <p>Texto de Ajuda</p>
+    <p>Insira os dados nos formúlarios, para direcionar os as solicitações de contato ou orçamento para os e-mails corretos.</p>
 </div>
 <div class="btn-group btn-group-md">
     <a href="formularios" class="btn btn-info" type="button"><em class="glyphicon glyphicon-refresh"></em> Atualizar</a>

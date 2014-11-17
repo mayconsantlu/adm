@@ -39,8 +39,9 @@ $rotas = array(
     "altera_cliente" => "Alterando cadastro de cliente",
     "apaga_cliente" => "Excluir cadastro de cliente",
     "produtos" => "Produtos do site",
-    "novo_produto" => "Inserir novo Produto",
+    "cria_produto" => "Inserir novo Produto",
     "altera_produto" => "Alterando cadastro do produto",
+    "apaga_produto" => "Excluindo produtos",
     "apaga_cliente" => "Excluir cadastro do produto",
     "404" => "404 - Página não encontrada"
 );
