@@ -3,16 +3,18 @@
 * Arquivo de Configuracao
 */
 // Banco de dados
+
+$host = 'localhost';
+$db = 'mj';
+$user = 'root';
+$pass = 'root';
+
 /*
- * $host = 'localhost';
- * $db = 'mj';
- * $user = 'root';
- * $pass = 'root';
-*/
 $host = 'mysql.hostinger.com.br';
 $db = 'u802129138_mj';
 $user = 'u802129138_mj';
 $pass = 'santlu';
+*/
 try {
     $conexao = new \PDO("mysql:host=$host; dbname=$db", "$user", "$pass");
     #$resultado = $conexao->exec($query); //exec rodar varios comandos de criação ou inserção

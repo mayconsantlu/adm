@@ -4,7 +4,14 @@ session_start();
 
 $url = parse_url("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 $getUrl = trim($url['path'], '/');
+
+//$getUrl = ltrim($url['path'], '/idiomas/ADM/');
+//print_r($trimmed)."\n";
+
 //echo $getUrl. "<br/>";
+
+//print_r($url)."\n";
+//print_r($getUrl);
 // --------
 date_default_timezone_set('America/Sao_Paulo');
 require_once ('config.php');
@@ -86,15 +93,15 @@ $pegasite = $stmt -> fetch(PDO::FETCH_ASSOC);
 	<!--script src="js/less-1.3.3.min.js"></script-->
 	<!--append ‘#!watch’ to the browser URL, then refresh the page.-->
 	
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
     <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
-	<link href="/css/style.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
     <?php
     if ($rota == 'login'){
         ?>
-        <link href="/css/login.css" rel="stylesheet">
+        <link href="css/login.css" rel="stylesheet">
     <?php
     }
     ?>

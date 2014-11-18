@@ -1,3 +1,5 @@
 <?php
-echo unlink("uploads/apagar.jpg");
+//echo unlink("uploads/apagar.jpg");
+ phpinfo();
+
 ?>
