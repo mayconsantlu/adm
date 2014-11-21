@@ -14,7 +14,7 @@ footer {background-color: #222; color: #ffffff; margin-bottom: 0px; padding: 10p
 .border {background-color: #f3f3f3; border: solid #cccccc 1px;}
 
 .min-height {
-    min-height: 550px;
+    min-height: auto;
 }
 .thumbnail-mostra {
     /*display: block;*/
@@ -47,11 +47,9 @@ footer {background-color: #222; color: #ffffff; margin-bottom: 0px; padding: 10p
 .title {
     font: 1.7em/1.2 Baskerville, "Baskerville old face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
-
 .code {
     font: 0.8em/1.6 Monaco, Mono-Space, monospace;
 }
-
 /* Disabled effect class */
 .disabled {
     pointer-events: none;

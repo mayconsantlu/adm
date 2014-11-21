@@ -257,3 +257,29 @@ $sqlc2 = "insert into tbl_produtos (titulo, imagem, descricao, link, valor, cada
 $stmt = $conexao->prepare($sqlc2);
 $stmt->execute();
 echo 'Passou produto'."\n";
+
+
+// cria usuario
+$conexao -> query("create table if not exists tbl_usuario
+                    (   id integer unsigned auto_increment not null,
+                        nome varchar(150) not null,
+                        usuario varchar(150) not null,
+                        senha varchar(150) not null,
+                        cadastro datetime not null,
+                        primary key (id));");
+
+// Limpando a tabela;
+$conexao -> query("truncate table tbl_usuario;");
+
+// cria usuario
+$nome = "Usuario Administrativo";
+$user = 'admin';
+$senha = 'senha';
+$pass = password_hash( $senha, PASSWORD_DEFAULT );
+
+//Criando o usuario padrao
+//$cadastro = date("Y");
+$sqluser = "insert into tbl_usuario (nome, usuario, senha, cadastro) values ('$nome', '$user', '$pass', now())";
+$stmt = $conexao->prepare($sqluser);
+$stmt->execute();
+echo 'Passou usuario'."\n";

@@ -1,15 +1,16 @@
 <?php
 session_start();
 //$_SESSION[logado] = 0;
-
-$url = parse_url("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-$getUrl = trim($url['path'], '/');
+    if ($_SESSION['logado'] == 0 ){
+        $getUrl = 'login';
+    }else {
+        $url = parse_url("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+        $getUrl = trim($url['path'], '/');
+    }
 
 //$getUrl = ltrim($url['path'], '/idiomas/ADM/');
 //print_r($trimmed)."\n";
-
 //echo $getUrl. "<br/>";
-
 //print_r($url)."\n";
 //print_r($getUrl);
 // --------
@@ -18,6 +19,8 @@ require_once ('config.php');
 require_once ('function/slug.php');
 // --------
 // Consulta
+
+
 if ($getUrl != "") {
     $rota = $getUrl;
 } else {
@@ -170,11 +173,18 @@ $pegasite = $stmt -> fetch(PDO::FETCH_ASSOC);
             </div>
     </div>
 </section>
-<footer class="rodape">
-            <!-- Rodape -->
-                    <p class="text-center">Todos os direitos reservados <?= date("Y"); ?></p>
-            <!-- Rodape -->
-</footer>
+<?php
+if ($rota != 'login'){
+  ?>
+    <footer class="rodape">
+        <!-- Rodape -->
+        <p class="text-center">Todos os direitos reservados <?= date("Y"); ?></p>
+        <!-- Rodape -->
+    </footer>
+<?php
+}
+?>
+
 <!-- Modal para mostar as imagens -->
 <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
 <div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">

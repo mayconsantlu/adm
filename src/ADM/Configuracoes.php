@@ -11,7 +11,7 @@ if (!empty($_POST)) {
             $chave      = $_POST['chave'];
             $id = 1;
             // alterar a partir daqui.
-            $sql1 = "update tbl_config set email = '$email', email2 = '$copia', mensagem = '$mensagem' where id = :id";
+            $sql1 = "update tbl_config set titulo = '$titulo', descricao = '$descricao', chave = '$chave' where id = :id";
             $stmt = $conexao->prepare($sql1);
             $stmt ->bindValue(':id', $id);
             $stmt->execute();
@@ -54,11 +54,18 @@ if (!empty($_POST)) {
            <?php } elseif ($msg == 3) { ?>
                <div class="alert alert-dismissable alert-warning">
                    <button type="button" class="close " data-dismiss="alert" aria-hidden="true">×</button>
-                   <span class="glyphicon glyphicon-warning-sign"></span> <strong> Ops..</strong> Voce deve acessar pela página de galerias, clique em Cancelar / Voltar.
+                   <span class="glyphicon glyphicon-warning-sign"></span> <strong> Ops..</strong> Voce deve acessar pela página de configurações, clique em Cancelar / Voltar.
                </div>
            <?php }  ?>
            <!-- Alert -->
-
+			<?php
+				// seleciona as paginas com base na url passada
+				$query = "Select * from tbl_config";
+				$stmt = $conexao -> prepare($query);
+				$stmt -> execute();
+				$config = $stmt -> fetch(PDO::FETCH_ASSOC)
+				//echo $config['id'];
+				?>
             <form class="form-horizontal" method="post" action="?salvar=sim">
 
                 <fieldset>
@@ -70,7 +77,7 @@ if (!empty($_POST)) {
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="titulo">Titulo do site</label>
                         <div class="col-md-6">
-                            <input id="titulo" name="titulo" type="text" placeholder="" class="form-control input-md" required="">
+                            <input id="titulo" name="titulo" type="text" placeholder="" class="form-control input-md" required="" value="<?php echo $config['titulo']; ?>" >
 
                         </div>
                     </div>
@@ -79,18 +86,17 @@ if (!empty($_POST)) {
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="desc">Descrição</label>
                         <div class="col-md-4">
-                            <textarea class="form-control" id="desc" name="desc"></textarea>
+                            <textarea class="form-control" id="descricao" name="descricao"><?php echo $config['descricao']; ?></textarea>
+							<span class="help-block">Digite uma descrição para o seu site, ela deve ser direta e objetiva, esta descrição é a parte mais importante para o seu site aparecer nos buscadores como o Google por exemplo, pois ele utiliza a mesma para idendificar o seu site.</span>
                         </div>
                     </div>
-
-                    <legend>Configurações de SEO</legend>
 
                     <!-- Textarea -->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="key">Palavras Chave</label>
                         <div class="col-md-4">
-                            <textarea class="form-control" id="key" name="key"></textarea>
-                            <span class="help-block">Digite as palávras chave, separadas por virgulas (,) ela snão são obrigatóiras, uma vez que o google não utiliza.</span>
+                            <textarea class="form-control" id="chave" name="chave"><?php echo $config['chave']; ?></textarea>
+                            <span class="help-block">Digite as palavras chave, separadas por virgulas (,), elas não são obrigatóriras, uma vez que o Google não as utiliza para posicionamento, mas pode auxilar na busca dentro do site.</span>
                         </div>
                     </div>
                     <!-- Button -->
