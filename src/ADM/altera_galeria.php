@@ -26,7 +26,7 @@ if (!empty($_POST)) {
             //$sql1 = "insert into tbl_galerias (titulo, obs, data_evento, cadastro) values ('$titulo', '$obs', '$data_evento', now())";
             $sql1 = "update tbl_galerias set titulo = '$titulo', obs = '$obs', data_evento = '$data_evento' where id = '$editar';";
             $stmt = $conexao->prepare($sql1);
-            //$stmt -> bindValue('editar', $editar);
+            //$stmt -> bindValue(':editar', $editar);
             $stmt->execute();
             $msg = 2;
         } else {

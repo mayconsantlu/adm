@@ -51,5 +51,6 @@ $rotas = array(
     "altera_produto" => "Alterando cadastro do produto",
     "apaga_produto" => "Excluindo produtos",
     "apaga_cliente" => "Excluir cadastro do produto",
+    "usuario" => "Exibindo dados do Usuário do ADM do Site",
     "404" => "404 - Página não encontrada"
 );

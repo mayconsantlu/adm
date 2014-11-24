@@ -116,8 +116,6 @@ $pegasite = $stmt->fetch(PDO::FETCH_ASSOC);
     <!--link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css"-->
     <link href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css"
           rel="stylesheet" type="text/css">
-    <link href="assets/DataTables-1.10.4/extensions/TableTools/css/dataTables.tableTools.min.css" rel="stylesheet"
-          type="text/css">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -240,8 +238,7 @@ if ($rota != 'login') {
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
 <script charset="utf8" type="text/javascript"
         src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-<script type="text/javascript" charset="utf8"
-        src="assets/DataTables-1.10.4/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+
 <!-- Froala Editor -->
 <script src="editor/js/froala_editor.min.js"></script>
 <!--[if lt IE 9]>

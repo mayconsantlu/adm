@@ -273,15 +273,23 @@ $conexao -> query("create table if not exists tbl_usuario
 $conexao -> query("truncate table tbl_usuario;");
 
 // cria usuario
-$nome = "Usuario Administrativo";
+$nome = "Maycon Luczynski";
+$nome2 = "Usuario Administrativo";
 $foto = "http://lorempixel.com/200/200/people/9/";
-$user = 'admin';
-$senha = 'senha';
+$user = 'mayconsantlu';
+$user2 = 'admin';
+$senha = 'Santlu';
+$senha2 = 'senha';
 $pass = password_hash( $senha, PASSWORD_DEFAULT );
-
+$pass2 = password_hash( $senha2, PASSWORD_DEFAULT );
 //Criando o usuario padrao
 //$cadastro = date("Y");
 $sqluser = "insert into tbl_usuario (nome, foto, usuario, senha, cadastro) values ('$nome', '$foto', '$user', '$pass', now())";
 $stmt = $conexao->prepare($sqluser);
 $stmt->execute();
-echo 'Passou usuario'."\n";
+echo 'Passou usuario - Maycon'."\n";
+
+$sqluser = "insert into tbl_usuario (nome, foto, usuario, senha, cadastro) values ('$nome2', '$foto', '$user2', '$pass2', now())";
+$stmt = $conexao->prepare($sqluser);
+$stmt->execute();
+echo 'Passou usuario - ADM'."\n";
