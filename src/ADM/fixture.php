@@ -263,6 +263,7 @@ echo 'Passou produto'."\n";
 $conexao -> query("create table if not exists tbl_usuario
                     (   id integer unsigned auto_increment not null,
                         nome varchar(150) not null,
+                        foto varchar(150) null,
                         usuario varchar(150) not null,
                         senha varchar(150) not null,
                         cadastro datetime not null,
@@ -273,13 +274,14 @@ $conexao -> query("truncate table tbl_usuario;");
 
 // cria usuario
 $nome = "Usuario Administrativo";
+$foto = "http://lorempixel.com/200/200/people/9/";
 $user = 'admin';
 $senha = 'senha';
 $pass = password_hash( $senha, PASSWORD_DEFAULT );
 
 //Criando o usuario padrao
 //$cadastro = date("Y");
-$sqluser = "insert into tbl_usuario (nome, usuario, senha, cadastro) values ('$nome', '$user', '$pass', now())";
+$sqluser = "insert into tbl_usuario (nome, foto, usuario, senha, cadastro) values ('$nome', '$foto', '$user', '$pass', now())";
 $stmt = $conexao->prepare($sqluser);
 $stmt->execute();
 echo 'Passou usuario'."\n";

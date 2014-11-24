@@ -9,7 +9,7 @@
                         <a href="paginas">Páginas</a>
                     </li>
                     <li>
-                        <a href="secoes">Seçoes</a>
+                        <a href="secoes">Seções</a>
                     </li>
                     <li>
                         <a href="galerias">Galerias</a>
@@ -35,7 +35,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opções<strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="ajuda">Ajuda</a>
+                                <a href="usuario">Usuário</a>
                             </li>
                             <li>
                                 <a href="#">Ver Site</a>

@@ -11,7 +11,7 @@ $stmt -> execute();
 
 
 ?>
-<div class="container">
+<div class="">
     <div class="help-tip">
         <p>Você está visualizando as fotos da galeria, clique em [ Voltar ] para visualizar a listagem.
         </p>
@@ -21,7 +21,7 @@ $stmt -> execute();
     </div>
 </div>
 
-<div class="container">
+<div class="">
     <!-- Alert -->
     <?php if ($msg == 1){ ?>
         <div class="alert alert-dismissable alert-danger">

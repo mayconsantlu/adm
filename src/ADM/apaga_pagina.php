@@ -39,7 +39,7 @@ if (!empty($_POST)) {
 
 ?>
 
-<div class="container">
+<div class="">
     <div class="help-tip">
         <p>Verifique se os dados que você quer apagar são estes mesmos e clique em confirmar, clique em [Cancelar / Voltar] para desistir e retornar a listagem.
         </p>
@@ -49,7 +49,7 @@ if (!empty($_POST)) {
     </div>
 </div>
 
-<div class="container">
+<div class="">
     <!-- Alert -->
     <?php if ($msg == 1){ ?>
         <div class="alert alert-dismissable alert-danger">

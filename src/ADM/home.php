@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="">
     <div class="help-tip">
         <p>Nesta página você tem um resumo do seu site.
         </p>
@@ -142,7 +142,9 @@
                     </h3>
                 </div>
                 <div class="panel-body">
-                    Panel content
+                    Titulo do Site: <?php echo $pegasite['titulo']; ?>
+                    <br>
+                    Descrição: <?php echo $pegasite['descricao']; ?>
                 </div>
 
             </div>

@@ -44,7 +44,7 @@ if (!empty($_POST)) {
 
 ?>
 
-<div class="container">
+<div class="">
     <div class="help-tip">
         <p>Preencha os dados, confira se estão corretos e clique em salvar.
             Recebendo a mensagem de que os dados foram salvos, clique em [Cancelar / Voltar] para visualizar a listagem.
@@ -55,7 +55,7 @@ if (!empty($_POST)) {
     </div>
 </div>
 
-<div class="container">
+<div class="">
     <!-- Alert -->
     <?php if ($msg == 1){ ?>
         <div class="alert alert-dismissable alert-danger">
