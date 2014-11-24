@@ -35,7 +35,7 @@
                     $pagina = $stmt -> fetch(PDO::FETCH_ASSOC);
                     //print_r($resultado);
                     ?>
-                    existem cadastradas em seu site um total de: <span class="badge pull-right"><?=$pagina['count(titulo)'];?></span>
+                    Total de páginas: <span class="badge pull-right"><?=$pagina['count(titulo)'];?></span>
                 </div>
 
             </div>
@@ -55,7 +55,7 @@
                     $secao = $stmt -> fetch(PDO::FETCH_ASSOC);
                     //print_r($resultado);
                     ?>
-                    existem cadastradas em seu site um total de: <span class="badge pull-right"><?=$secao['count(id)'];?></span>
+                    Total de seções: <span class="badge pull-right"><?=$secao['count(id)'];?></span>
                 </div>
 
             </div>
@@ -75,7 +75,7 @@
                     $cliente = $stmt -> fetch(PDO::FETCH_ASSOC);
                     //print_r($resultado);
                     ?>
-                    existem cadastrados em seu site um total de: <span class="badge pull-right"><?=$cliente['count(id)'];?></span>
+                    Total de clientes: <span class="badge pull-right"><?=$cliente['count(id)'];?></span>
                 </div>
 
             </div>
@@ -100,7 +100,16 @@
                     $galerias = $stmt -> fetch(PDO::FETCH_ASSOC);
                     //print_r($resultado);
                     ?>
-                    existem cadastrados em seu site um total de: <span class="badge pull-right"><?=$cliente['count(id)'];?></span>
+                    Total de Galerias: <span class="badge pull-right"><?=$cliente['count(id)'];?></span>
+                    <br />
+                    <?php
+                    $query4 = "select count(id) from tbl_fotos;";
+                    $stmt = $conexao -> prepare($query4);
+                    $stmt -> execute();
+                    $fotos = $stmt -> fetch(PDO::FETCH_ASSOC);
+                    //print_r($resultado);
+                    ?>
+                    Com um total de fotos: <span class="badge pull-right"><?=$fotos['count(id)'];?></span>
                 </div>
 
             </div>
@@ -113,7 +122,14 @@
                     </h3>
                 </div>
                 <div class="panel-body">
-                    Panel content
+                    <?php
+                    $query4 = "select count(id) from tbl_produtos;";
+                    $stmt = $conexao -> prepare($query4);
+                    $stmt -> execute();
+                    $produtos = $stmt -> fetch(PDO::FETCH_ASSOC);
+                    //print_r($resultado);
+                    ?>
+                    Total de Produtos / Serviços: <span class="badge pull-right"><?=$produtos['count(id)'];?></span>
                 </div>
 
             </div>
