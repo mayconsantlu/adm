@@ -22,11 +22,11 @@ $stmt -> execute();
 </div>
 <div class="btn-group btn-group-md">
     <a href="novo_cliente" class="btn btn-success" type="button"><em class="glyphicon glyphicon-plus-sign"></em> Novo Cliente</a>
-    <a href="#" class="btn btn-primary" type="button"><em class="glyphicon glyphicon-print"></em> Imprimir</a>
+    <a href="imprimeCliente.php" target="_blank"  class="btn btn-primary" type="button"><em class="glyphicon glyphicon-print"></em> Imprimir</a>
     <a href="clientes" class="btn btn-info" type="button"><em class="glyphicon glyphicon-refresh"></em> Atualizar</a>
 </div>
 <hr />
-<table class="table table-condensed table-hover table-bordered table-responsive border-radius5">
+<table id="tabela" class="table table-condensed table-hover table-bordered table-responsive border-radius5 display responsive">
     <thead>
     <tr class="t-color">
         <th>#</th>

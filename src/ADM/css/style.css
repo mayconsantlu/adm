@@ -14,7 +14,7 @@ footer {background-color: #222; color: #ffffff; margin-bottom: 0px; padding: 10p
 .border {background-color: #f3f3f3; border: solid #cccccc 1px;}
 
 .min-height {
-    min-height: auto;
+    min-height: 500px;
 }
 .thumbnail-mostra {
     /*display: block;*/

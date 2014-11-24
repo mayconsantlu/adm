@@ -3,9 +3,9 @@
 $msg = 0;
 if (!empty($_POST)) {
     // Verifica se a variável $_POST['titulo'] existe
-    if (isset($_POST['contato'])) {
+    if (isset($_POST['titulo'])) {
         // Verifica se o usuário digitou os dados
-        if (!empty($_POST['contato'])) {
+        if (!empty($_POST['titulo'])) {
             $titulo         = $_POST['titulo'];
             $descricao        = $_POST['descricao'];
             $chave      = $_POST['chave'];
@@ -93,7 +93,7 @@ if (!empty($_POST)) {
 
                     <!-- Textarea -->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="key">Palavras Chave</label>
+                        <label class="col-md-4 control-label" for="chave">Palavras Chave</label>
                         <div class="col-md-4">
                             <textarea class="form-control" id="chave" name="chave"><?php echo $config['chave']; ?></textarea>
                             <span class="help-block">Digite as palavras chave, separadas por virgulas (,), elas não são obrigatóriras, uma vez que o Google não as utiliza para posicionamento, mas pode auxilar na busca dentro do site.</span>

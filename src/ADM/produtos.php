@@ -25,7 +25,7 @@ $stmt -> execute();
     <a href="produtos" class="btn btn-info" type="button"><i class="glyphicon glyphicon-refresh"></i> Atualizar</a>
 </div>
 <hr />
-<table class="table table-condensed table-hover table-bordered table-responsive border-radius5">
+<table id="tabela" class="table table-condensed table-hover table-bordered table-responsive border-radius5 display">
     <thead>
     <tr class="t-color">
         <th>#</th>
@@ -49,9 +49,9 @@ $stmt -> execute();
             <td><?php echo $resultado['id']; ?></td>
             <td><?php echo $resultado['titulo']; ?></td>
             <td>
-                <div id="links">
+                <div id="links" class="text-center">
                     <a href="<?php echo $resultado['imagem']; ?>" title="<?php echo $resultado['titulo']; ?>" data-gallery>
-                       <img src="<?php echo $resultado['imagem']; ?>" alt="<?php echo $resultado['titulo']; ?>" height="60px" class="thumbnail-mostra">
+                       <img src="<?php echo $resultado['imagem']; ?>" alt="<?php echo $resultado['titulo']; ?>" height="30px">
                     </a>
                 </div>
             </td>

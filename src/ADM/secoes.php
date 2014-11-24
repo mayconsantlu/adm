@@ -27,7 +27,7 @@ $stmt -> execute();
     <a href="/secoes" class="btn btn-info" type="button"><em class="glyphicon glyphicon-refresh"></em> Atualizar</a>
 </div>
 <hr />
-<table class="table table-condensed table-hover table-bordered table-responsive border-radius5">
+<table id="tabela" class="table table-condensed table-hover table-bordered table-responsive border-radius5 display">
     <thead>
     <tr class="t-color">
         <th>#</th>
