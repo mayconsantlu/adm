@@ -18,7 +18,7 @@
     </h1>
 </div>
 <div class="help-tip">
-    <p>Texto de Ajuda</p>
+    <p>Para inserir uma nova página clique em [ nova página ], preencha os campos e salve.</p>
 </div>
 <div class="btn-group btn-group-md">
     <a href="cria_pagina" class="btn btn-success" type="button"><em class="glyphicon glyphicon-plus-sign"></em> Nova página</a>

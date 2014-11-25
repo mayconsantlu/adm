@@ -4,6 +4,7 @@
 */
 // Banco de dados
 
+
 $host = 'localhost';
 $db = 'mj';
 $user = 'root';

@@ -75,7 +75,10 @@ if (isset($_POST['imagem'])){
 }
 
 ?>
-
+<div class="help-tip">
+    <p>Você pode alterar os campos de Nome e usuário, a senha ou a imagem independentemente.
+    </p>
+</div>
 <h1 class="page-header">Editar perfil de usuário</h1>
 
 <div class="row">
@@ -170,6 +173,8 @@ if (isset($_POST['imagem'])){
         </form>
     </div>
 </div>
+
+<hr>
 
 <script type="text/javascript"> //Iniciamos uma escrita em Javascript
     function verificarSenha(){ //Criamos uma função com o nome verificarSenha
