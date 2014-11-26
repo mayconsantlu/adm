@@ -93,8 +93,8 @@ $config = $stmt->fetch(PDO::FETCH_ASSOC)
 
             <div class="col-md-4">
                 <textarea class="form-control" id="descricao"
-                          name="descricao"><?php echo $config['descricao']; ?></textarea>
-                <span class="help-block">Digite uma descrição para o seu site, ela deve ser direta e objetiva, esta descrição é a parte mais importante para o seu site aparecer nos buscadores como o Google por exemplo, pois ele utiliza a mesma para idendificar o seu site.</span>
+                          name="descricao" maxlength="300"><?php echo $config['descricao']; ?></textarea>
+                <span class="help-block">Digite uma descrição para o seu site, ela deve ser direta e objetiva, o ideal é que ela não passe de 250 caracteres, esta descrição é a parte mais importante para o seu site aparecer nos buscadores como o Google por exemplo, pois ele utiliza a mesma para identificar o seu site, o campo limita a 300.</span>
             </div>
         </div>
 

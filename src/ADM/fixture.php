@@ -75,7 +75,7 @@ $conexao -> query("create table if not exists tbl_galerias
 $conexao -> query("truncate table tbl_galerias;");
 
 // cria galeria
-$titulo = "Evento na loja Francolino";
+$titulo = "Evento na minha empresa";
 $obs = 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis.';
 $data_evento = '2014-10-14';
 //Criando as páginas de teste
@@ -145,7 +145,7 @@ echo 'Passou formulario Orcamento'."\n";
 $conexao -> query("create table if not exists tbl_config
                  (  id integer unsigned auto_increment not null,
                     titulo varchar(250) not null,
-                    descricao varchar(250) not null,
+                    descricao varchar(300) not null,
                     chave varchar(250) not null,
                     cadastro datetime not null,
                     primary key (id));");
@@ -204,6 +204,7 @@ $conexao -> query("create table if not exists tbl_contato
                     bairro varchar(100) null,
                     cidade varchar(200) null,
                     estado varchar(5) null,
+					cep varchar(9) null,
                     contato varchar(200) null,
                     telefone varchar(14) null,
                     telefone2 varchar(14) null,

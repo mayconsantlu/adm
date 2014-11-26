@@ -1,8 +1,8 @@
 <?php
 session_start();
 //$_SESSION[logado] = 0;
-//define('PROJECT_DIR', 'ADM');
-//define('REQUEST_URI',str_replace('/'.PROJECT_DIR,'',$_SERVER['REQUEST_URI']));
+define(PROJECT_DIR, 'ADM');
+define(REQUEST_URI,str_replace('/'.PROJECT_DIR,'',$_SERVER['REQUEST_URI']));
 
 if ($_SESSION['logado'] == 0) {
     $getUrl = 'login';
@@ -15,21 +15,23 @@ if ($_SESSION['logado'] == 0) {
 //$getUrl = ltrim($url['path'], '/idiomas/ADM/');
 //print_r($trimmed)."\n";
 //echo $getUrl. "<br/>";
-//print_r($url)."\n";
+//print_r($url).REQUEST_URI."\n";
 //print_r($getUrl);
 // --------
 date_default_timezone_set('America/Sao_Paulo');
-require_once('config.php');
-require_once('function/slug.php');
+require_once('ADM/config.php');
+require_once('ADM/function/slug.php');
 // --------
 // Consulta
 
 
 if ($getUrl != "") {
-    $rota = $getUrl;
+    $rota = 'ADM/'.$getUrl;
 } else {
-    $rota = 'home';
+    $rota = 'ADM/home';
 }
+
+print_r($rota);
 //<!-- titulo e url -->
 // pega os dados pelo get e verifica se não está em branco
 if (isset($getUrl) != "") {
@@ -38,9 +40,9 @@ if (isset($getUrl) != "") {
     $pag = "";
 }
 // ajusta os titulos e paginas e verifica se existe
-if (($pag == 'home') or ($pag == "")) {
+if (($pag == 'ADM/home') or ($pag == "")) {
     $titulo = $rotas["home"];
-    $conteudo = 'home.php';
+    $conteudo = 'ADM/home.php';
 } elseif ($pag <> "home") {
     $titulo = $rotas[$rota];
     $conteudo = $rota . '.php';
@@ -137,8 +139,8 @@ $pegasite = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="row clearfix" id="menu_topo">
             <div class="col-md-12 column">
                 <?php
-                if ($rota != 'login') {
-                    require_once 'Topmenu.php';
+                if ($rota != 'ADM/login') {
+                    require_once 'ADM/Topmenu.php';
                 }
                 ?>
             </div>
@@ -152,8 +154,8 @@ $pegasite = $stmt->fetch(PDO::FETCH_ASSOC);
             <!-- Area de informacoes -->
             <div class="col-md-12 column">
                 <?php
-                if ($rota != 'login') {
-                    require_once 'bread.php';
+                if ($rota != 'ADM/login') {
+                    require_once 'ADM/bread.php';
                 }
                 //require_once 'paginas.php';
                 require_once $conteudo;
@@ -288,14 +290,14 @@ if ($rota != 'login') {
 <script type = "text/javascript" >
     $(document).ready(function () {
         $("#cnpj").mask("99.999.999/9999-99");
-            $("#data").mask("99/99/9999");
-            $("#telefone").mask("99 9999-9999?*");
-            $("#telefone2").mask("(99) 9999-9999*");
-            $("#celular").mask("(99) 9999-9999*")
+        $("#data").mask("99/99/9999");
+        $("#telefone").mask("99 9999-9999?*");
+        $("#telefone2").mask("(99) 9999-9999*");
+        $("#celular").mask("(99) 9999-9999*")
     });
-//campo file personalizado
-$('input[type=file]').bootstrapFileInput();
-$('.file-inputs').bootstrapFileInput();
+    //campo file personalizado
+    $('input[type=file]').bootstrapFileInput();
+    $('.file-inputs').bootstrapFileInput();
 
 </script>
 <script type="text/javascript">
