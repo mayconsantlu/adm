@@ -49,8 +49,8 @@ $stmt -> execute();
     if($stmt->rowCount()>0){
     while($resultado = $stmt -> fetch(PDO::FETCH_ASSOC)) {
         ?>
-            <a href="galeria/<?php echo $resultado['img']; ?>" title="<?php echo $resultado['titulo']; ?>" data-gallery>
-                <img src="galeria/<?php echo $resultado['img']; ?>" alt="<?php echo $resultado['titulo']; ?>" height="100px" class="thumbnail-mostra">
+            <a href="includes/galeria/<?php echo $resultado['img']; ?>" title="<?php echo $resultado['titulo']; ?>" data-gallery>
+                <img src="includes/galeria/<?php echo $resultado['img']; ?>" alt="<?php echo $resultado['titulo']; ?>" height="100px" class="thumbnail-mostra">
             </a>
 
     <?php

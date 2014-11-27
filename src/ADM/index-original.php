@@ -20,7 +20,7 @@ if ($_SESSION['logado'] == 0) {
 // --------
 date_default_timezone_set('America/Sao_Paulo');
 require_once('config.php');
-require_once('includes/function/slug.php');
+require_once('function/slug.php');
 // --------
 // Consulta
 
@@ -40,15 +40,14 @@ if (isset($getUrl) != "") {
 // ajusta os titulos e paginas e verifica se existe
 if (($pag == 'home') or ($pag == "")) {
     $titulo = $rotas["home"];
-    $conteudo = 'includes/home.php';
+    $conteudo = 'home.php';
 } elseif ($pag <> "home") {
     $titulo = $rotas[$rota];
-    $conteudo = 'includes/'.$rota.'.php';
+    $conteudo = $rota . '.php';
 } else {
     $titulo = $rotas["404"];
     $pag = '404';
     http_response_code(404);
-    $conteudo = 'includes/404.php';
 }
 /*
         if (($pag == 'home') or ($pag == "")) {
@@ -98,15 +97,15 @@ $pegasite = $stmt->fetch(PDO::FETCH_ASSOC);
     <!--script src="js/less-1.3.3.min.js"></script-->
     <!--append ‘#!watch’ to the browser URL, then refresh the page.-->
 
-    <link href="includes/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
-    <link rel="stylesheet" href="includes/css/bootstrap-image-gallery.min.css">
-    <link href="includes/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
+    <link href="css/style.css" rel="stylesheet">
     <?php
     if ($rota == 'login') {
         ?>
-        <link href="includes/css/login.css" rel="stylesheet">
+        <link href="css/login.css" rel="stylesheet">
     <?php
     }
     ?>
@@ -114,8 +113,8 @@ $pegasite = $stmt->fetch(PDO::FETCH_ASSOC);
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//www.fuelcdn.com/fuelux/3.1.0/css/fuelux.min.css">
 
-    <link href="includes/editor/css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="includes/editor/css/froala_editor.min.css" rel="stylesheet" type="text/css">
+    <link href="editor/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="editor/css/froala_editor.min.css" rel="stylesheet" type="text/css">
 
     <!-- DataTables CSS -->
     <!--link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css"-->
@@ -128,7 +127,7 @@ $pegasite = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <!-- Fav and touch icons -->
 
-    <link rel="shortcut icon" href="includes/img/favicon-logo.png">
+    <link rel="shortcut icon" href="img/favicon-logo.png">
 
 </head>
 <body>
@@ -139,7 +138,7 @@ $pegasite = $stmt->fetch(PDO::FETCH_ASSOC);
             <div class="col-md-12 column">
                 <?php
                 if ($rota != 'login') {
-                    require_once 'includes/Topmenu.php';
+                    require_once 'Topmenu.php';
                 }
                 ?>
             </div>
@@ -154,7 +153,7 @@ $pegasite = $stmt->fetch(PDO::FETCH_ASSOC);
             <div class="col-md-12 column">
                 <?php
                 if ($rota != 'login') {
-                    require_once 'includes/bread.php';
+                    require_once 'bread.php';
                 }
                 //require_once 'paginas.php';
                 require_once $conteudo;
@@ -230,35 +229,35 @@ if ($rota != 'login') {
 
 <!-- Latest compiled and minified JavaScript
     <!-- jQuery -->
-<script type="text/javascript" src="includes/js/scripts.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//www.fuelcdn.com/fuelux/3.1.0/js/fuelux.min.js"></script>
-<script src="includes/js/bootstrap.file-input.js"></script>
+<script src="js/bootstrap.file-input.js"></script>
 <!-- Galeria -->
 <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-<script src="includes/js/bootstrap-image-gallery.min.js"></script>
+<script src="js/bootstrap-image-gallery.min.js"></script>
 <!-- DataTables -->
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
 <script charset="utf8" type="text/javascript"
         src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
 <!-- Froala Editor -->
-<script src="includes/editor/js/froala_editor.min.js"></script>
+<script src="editor/js/froala_editor.min.js"></script>
 <!--[if lt IE 9]>
 <script src="../js/froala_editor_ie8.min.js"></script>
 <![endif]-->
-<script src="includes/editor/js/plugins/tables.min.js"></script>
-<script src="includes/editor/js/plugins/lists.min.js"></script>
-<script src="includes/editor/js/plugins/colors.min.js"></script>
-<script src="includes/editor/js/plugins/media_manager.min.js"></script>
-<script src="includes/editor/js/plugins/file_upload.min.js"></script>
-<script src="includes/editor/js/plugins/font_family.min.js"></script>
-<script src="includes/editor/js/plugins/font_size.min.js"></script>
-<script src="includes/editor/js/plugins/block_styles.min.js"></script>
-<script src="includes/editor/js/plugins/video.min.js"></script>
-<script src="includes/editor/js/langs/pt_br.js"></script>
+<script src="editor/js/plugins/tables.min.js"></script>
+<script src="editor/js/plugins/lists.min.js"></script>
+<script src="editor/js/plugins/colors.min.js"></script>
+<script src="editor/js/plugins/media_manager.min.js"></script>
+<script src="editor/js/plugins/file_upload.min.js"></script>
+<script src="editor/js/plugins/font_family.min.js"></script>
+<script src="editor/js/plugins/font_size.min.js"></script>
+<script src="editor/js/plugins/block_styles.min.js"></script>
+<script src="editor/js/plugins/video.min.js"></script>
+<script src="editor/js/langs/pt_br.js"></script>
 <script>
     $(function () {
         $('#evento')
@@ -266,7 +265,7 @@ if ($rota != 'login') {
                 inlineMode: false,
                 language: 'pt_br',
                 // Set the image upload URL.
-                imageUploadURL: 'includes/upload_image.php',
+                imageUploadURL: 'upload_image.php',
 
                 imageUploadParams: {id: "evento"}
             });
@@ -275,7 +274,7 @@ if ($rota != 'login') {
                 inlineMode: false,
                 language: 'pt_br',
                 // Set the image upload URL.
-                imageUploadURL: 'includes/upload_image.php',
+                imageUploadURL: 'upload_image.php',
 
                 imageUploadParams: {id: "texto"}
             });
@@ -284,20 +283,20 @@ if ($rota != 'login') {
 <!-- Mascara de campos -->
 <!--script type="text/javascript" src="js/jquery-1.2.6.pack.js"-->
 </script>
-<script type="text/javascript" src="includes/js/jquery.maskedinput-1.1.4.pack.js"/>
+<script type="text/javascript" src="js/jquery.maskedinput-1.1.4.pack.js"/>
 </script>
 <script type = "text/javascript" >
     $(document).ready(function () {
         $("#cnpj").mask("99.999.999/9999-99");
-            $("#data").mask("99/99/9999");
-            $("#telefone").mask("99 9999-9999?9");
-            $("#telefone2").mask("99 9999-9999?9");
-            $("#celular").mask("99 9999-9999?9")
+        $("#data").mask("99/99/9999");
+        $("#telefone").mask("99 9999-9999?9");
+        $("#telefone2").mask("99 9999-9999?9");
+        $("#celular").mask("99 9999-9999?9")
 
     });
-//campo file personalizado
-$('input[type=file]').bootstrapFileInput();
-$('.file-inputs').bootstrapFileInput();
+    //campo file personalizado
+    $('input[type=file]').bootstrapFileInput();
+    $('.file-inputs').bootstrapFileInput();
 
 </script>
 <script type="text/javascript">
