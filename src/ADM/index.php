@@ -3,10 +3,10 @@ session_start();
 //$_SESSION[logado] = 0;
 //define('PROJECT_DIR', 'ADM');
 //define('REQUEST_URI',str_replace('/'.PROJECT_DIR,'',$_SERVER['REQUEST_URI']));
+if (isset($_SESSION['logado']) && $_SESSION['logado'] == 0) {
 
-if ($_SESSION['logado'] == 0) {
-    $getUrl = 'login';
-} else {
+        $getUrl = 'login';
+    } else {
     $url = parse_url("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
     //$url = parse_url("http://" .str_replace('/'.PROJECT_DIR,'',$_SERVER['REQUEST_URI']));
     $getUrl = trim($url['path'], '/');
@@ -15,7 +15,7 @@ if ($_SESSION['logado'] == 0) {
 //$getUrl = ltrim($url['path'], '/idiomas/ADM/');
 //print_r($trimmed)."\n";
 //echo $getUrl. "<br/>";
-//print_r($url)."\n";
+print_r($url)."\n";
 //print_r($getUrl);
 // --------
 date_default_timezone_set('America/Sao_Paulo');

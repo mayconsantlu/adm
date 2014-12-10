@@ -43,7 +43,7 @@ if (!empty($_POST)) {
         }
 
     } else {
-        echo "O campo 'nome' não existe na variável $_POST";
+        //echo "O campo 'nome' não existe na variável $_POST";
     }
    // Atualiza a imagem do Usuario
 
@@ -59,7 +59,7 @@ if (isset($_POST['imagem'])){
     if (isset($_FILES['foto'])){
         $foto = $_FILES['foto'];
         $redim = new Redimensiona();
-        $src = $redim->Redimensionar($foto, 200, "upload_image/usuario");
+        $src = $redim->Redimensionar($foto, 200, "includes/upload_image/usuario");
         $id = 2;
         //$pass = password_hash( $senha, PASSWORD_DEFAULT );
         $sqlImg = "update tbl_usuario set foto = '$src' where id = :id";
