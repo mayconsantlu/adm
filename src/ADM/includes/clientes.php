@@ -22,7 +22,7 @@ $stmt -> execute();
 </div>
 <div class="btn-group btn-group-md">
     <a href="novo_cliente" class="btn btn-success" type="button"><em class="glyphicon glyphicon-plus-sign"></em> Novo Cliente</a>
-    <a href="imprimeCliente.php" target="_blank"  class="btn btn-primary" type="button"><em class="glyphicon glyphicon-print"></em> Imprimir</a>
+    <a href="http://<?=$_SERVER["HTTP_HOST"];?>/includes/imprimeCliente.php" target="_blank"  class="btn btn-primary" type="button"><em class="glyphicon glyphicon-print"></em> Imprimir</a>
     <a href="clientes" class="btn btn-info" type="button"><em class="glyphicon glyphicon-refresh"></em> Atualizar</a>
 </div>
 <hr />

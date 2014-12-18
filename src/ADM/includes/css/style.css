@@ -12,7 +12,7 @@ footer {background-color: #3D473F; color: #ffffff;  padding: 10px; height: 150px
 .min {width: 50px;}
 .padding {padding: 5px;}
 .border {background-color: #f3f3f3; border: solid #cccccc 1px;}
-
+.margin-top-negative {margin-top: -55px;}
 .min-height {
     min-height: 500px;
 }

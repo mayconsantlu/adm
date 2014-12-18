@@ -22,12 +22,12 @@ if (isset($_POST['usuario'])) {
         //print_r($result);
         if (password_verify($senha, $hash)) {
             //echo 'A Senha é valida';
-            $_SESSION['logado'] = 1;
+            $_SESSION['logado'] = true;
             $_SESSION['nome'] = $result['nome'];
             //$_SESSION['mensagem'] = 'Você esta logago como administrador!';
             //$_SESSION['classe'] = 'alert-success';
             $msg = 1;
-            header("Location: home");
+            header("Location: http://localhost:8090/admin");
         } else {
             unset($_SESSION['usuario']);
             unset($_SESSION['senha']);
@@ -66,7 +66,7 @@ if (isset($_POST['usuario'])) {
         <h4 class="text-info">Acesso administrativo</h4>
         <!--div id="output">
         </div-->
-        <div class="avatar"><img src="includes/img/logo.png" class="logoava"> </div>
+        <div class="avatar"><img src="http://<?=$_SERVER["HTTP_HOST"];?>/includes/img/logo.png" class="logoava"> </div>
         <?php if ($msg == 2): ?>
             <div class="alert alert-dismissable <?php echo $_SESSION['classe']; ?>">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -83,4 +83,5 @@ if (isset($_POST['usuario'])) {
             </form>
         </div>
     </div>
+    <a class="center-block btn margin-top-negative" href="http://<?=$_SERVER["HTTP_HOST"];?>"><span class="glyphicon glyphicon-chevron-left" ></span> voltar ao site <span class="glyphicon glyphicon-chevron-right" ></span></a>
 </div>

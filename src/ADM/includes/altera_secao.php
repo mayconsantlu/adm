@@ -51,7 +51,7 @@ if (!empty($_POST)) {
         </p>
     </div>
     <div class="btn-group btn-group-md panel-body">
-        <a href="/secoes" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
+        <a href="secoes" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
     </div>
 </div>
 

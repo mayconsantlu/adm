@@ -1,10 +1,16 @@
 <?php
 $msg = 0;
-if (isset($_GET['visualizar'])) {
+if (isset($url['2'])) {
+    $visualizar = $url['2'];
+}else {
+    $msg = 3;
+}
+/*if (isset($_GET['visualizar'])) {
     $visualizar = $_GET['visualizar'];
 }else {
     $msg = 3;
 }
+*/
 $query = "select * from tbl_fotos where id_galeria = '$visualizar';";
 $stmt = $conexao -> prepare($query);
 $stmt -> execute();
@@ -17,7 +23,7 @@ $stmt -> execute();
         </p>
     </div>
     <div class="btn-group btn-group-md panel-body">
-        <a href="/galerias" class="btn btn-success" type="button"><em class="glyphicon glyphicon-chevron-left"></em> Voltar</a>
+        <a href="galerias" class="btn btn-success" type="button"><em class="glyphicon glyphicon-chevron-left"></em> Voltar</a>
     </div>
 </div>
 
@@ -49,8 +55,8 @@ $stmt -> execute();
     if($stmt->rowCount()>0){
     while($resultado = $stmt -> fetch(PDO::FETCH_ASSOC)) {
         ?>
-            <a href="includes/galeria/<?php echo $resultado['img']; ?>" title="<?php echo $resultado['titulo']; ?>" data-gallery>
-                <img src="includes/galeria/<?php echo $resultado['img']; ?>" alt="<?php echo $resultado['titulo']; ?>" height="100px" class="thumbnail-mostra">
+            <a href="http://<?=$_SERVER["HTTP_HOST"];?>/includes/galeria/<?php echo $resultado['img']; ?>" title="<?php echo $resultado['titulo']; ?>" data-gallery>
+                <img src="http://<?=$_SERVER["HTTP_HOST"];?>/includes/galeria/<?php echo $resultado['img']; ?>" alt="<?php echo $resultado['titulo']; ?>" height="100px" class="thumbnail-mostra">
             </a>
 
     <?php

@@ -4,8 +4,8 @@
 // ou seja: houve um submit no formulário
 
 $msg = 0;
-if (isset($_GET['apagar'])) {
-    $apagar = $_GET['apagar'];
+if (isset($url[2])) {
+    $apagar = $url[2];
 } else {
     $msg = 3;
 }
@@ -74,7 +74,7 @@ if (!empty($_POST)) {
         </p>
     </div>
     <div class="btn-group btn-group-md panel-body">
-        <a href="produtos" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em>
+        <a href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/produtos" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em>
             Cancelar / Voltar</a>
     </div>
 </div>
@@ -145,7 +145,7 @@ if (!empty($_POST)) {
                     <h3>Imagem do produto</h3>
 
                     <div class="t-color border border-radius5 padding">
-                        <img src="<?php echo $resultado['imagem']; ?>" alt="<?php echo $resultado['titulo']; ?>"
+                        <img src="http://<?=$_SERVER["HTTP_HOST"];?>/<?php echo $resultado['imagem']; ?>" alt="<?php echo $resultado['titulo']; ?>"
                              height="100%" class="img-rounded img-responsive">
                     </div>
                 </div>

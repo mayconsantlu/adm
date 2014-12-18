@@ -17,7 +17,7 @@ if (!empty($_POST)) {
             $descricao      = $_POST['texto'];
 
             $redim = new Redimensiona();
-            $src=$redim->Redimensionar($imagem, 800, "galeria/uploads/produtos");
+            $src=$redim->Redimensionar($imagem, 800, "includes/galeria/uploads/produtos");
 
             //echo $titulo."\n";
             //echo $evento;
@@ -36,9 +36,9 @@ if (!empty($_POST)) {
 } else {
     //echo "Não houve submit no formulário";
     $titulo         = "";
-    $texto          = "";
-    $slug           = "";
-    $metadesc       = "";
+    $imagem         = "";
+    $valor          = "";
+    $descricao      = "";
 }
 
 
@@ -51,7 +51,7 @@ if (!empty($_POST)) {
         </p>
     </div>
     <div class="btn-group btn-group-md panel-body">
-        <a href="/produtos" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
+        <a href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/produtos" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
     </div>
 </div>
 

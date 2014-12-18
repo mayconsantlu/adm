@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('America/Sao_Paulo');
-require_once('config.php');
+require_once('../config.php');
 //seleciona dados
 $query = "Select * from tbl_clientes";
 //$stmt = $conexao->query($query);

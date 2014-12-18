@@ -50,16 +50,16 @@ $stmt -> execute();
             <td><?php echo $resultado['titulo']; ?></td>
             <td>
                 <div id="links" class="text-center">
-                    <a href="<?php echo 'includes/'.$resultado['imagem']; ?>" title="<?php echo $resultado['titulo']; ?>" data-gallery>
-                       <img src="<?php echo 'includes/'.$resultado['imagem']; ?>" alt="<?php echo $resultado['titulo']; ?>" height="30px">
+                    <a href="http://<?=$_SERVER["HTTP_HOST"];?>/<?php echo $resultado['imagem']; ?>" title="<?php echo $resultado['titulo']; ?>" data-gallery>
+                       <img src="http://<?=$_SERVER["HTTP_HOST"];?>/<?php echo $resultado['imagem']; ?>" alt="<?php echo $resultado['titulo']; ?>" height="30px">
                     </a>
                 </div>
             </td>
             <td><?php echo $resultado['descricao']; ?></td>
             <td><?php echo $resultado['valor']; ?></td>
             <td>
-                <a class="btn btn-warning btn-sm" href="altera_produto?editar=<?php echo $resultado['id']; ?>" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a class="btn btn-danger btn-sm" href="apaga_produto?apagar=<?php echo $resultado['id']; ?>" title="Excluir"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-warning btn-sm" href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/altera_produto/<?php echo $resultado['id']; ?>" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a class="btn btn-danger btn-sm" href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/apaga_produto/<?php echo $resultado['id']; ?>" title="Excluir"><span class="glyphicon glyphicon-remove"></span></a>
             </td>
         </tr>
     <?php

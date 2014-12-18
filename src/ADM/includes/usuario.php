@@ -57,6 +57,9 @@ if (!empty($_POST)) {
 }
 if (isset($_POST['imagem'])){
     if (isset($_FILES['foto'])){
+        //Apaga imagem antiga
+        unlink($_SESSION['foto']);
+        // Processa nova imagem
         $foto = $_FILES['foto'];
         $redim = new Redimensiona();
         $src = $redim->Redimensionar($foto, 200, "includes/upload_image/usuario");
@@ -108,13 +111,14 @@ if (isset($_POST['imagem'])){
     $stmt = $conexao -> prepare($query);
     $stmt -> execute();
     $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
+    $_SESSION['foto'] = $resultado['foto'];
     //print_r($resultado);
     ?>
     <!-- left column -->
     <div class="col-md-4 col-sm-6 col-xs-12">
      <form class="form-horizontal" role="form" name="imagem" id="imagem" method="post" enctype="multipart/form-data" >
         <div class="text-center">
-            <img src="<?php echo $resultado['foto']; ?>" class="avatar img-circle img-thumbnail" alt="avatar">
+            <img src="http://<?=$_SERVER["HTTP_HOST"];?>/<?php echo $resultado['foto']; ?>" width="200" height="200" class="avatar img-circle img-thumbnail" alt="avatar">
             <h6>Selecione outra imagem</h6>
             <input title="Selecione" type="file" name="foto" id="foto" class="btn btn-primary"> <!-- text-center center-block well well-sm -->
             <span class="help-block">A imagem deve ter preferencialmente 200 X 200 px.</span>

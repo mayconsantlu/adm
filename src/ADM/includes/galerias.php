@@ -47,10 +47,10 @@ $stmt -> execute();
         <td><?php echo $resultado['obs']; ?></td>
         <td><?php echo $resultado['data_evento']; ?></td>
         <td>
-            <a class="btn btn-success btn-sm" href="includes/galeria/index.php?inserir=<?php echo $resultado['id']; ?>&titulo=<?php echo $resultado['titulo']; ?>" title="Inserir fotos"><span class="glyphicon glyphicon-camera"></span></a>
-            <a class="btn btn-info btn-sm" href="mostra_galeria?visualizar=<?php echo $resultado['id']; ?>" title="Visualizar"><span class="glyphicon glyphicon-picture"></span></a>
-            <a class="btn btn-warning btn-sm" href="altera_galeria?editar=<?php echo $resultado['id']; ?>" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
-            <a class="btn btn-danger btn-sm" href="apaga_galeria?apagar=<?php echo $resultado['id']; ?>" title="Excluir"><span class="glyphicon glyphicon-remove"></span></a>
+            <a class="btn btn-success btn-sm" href="http://<?=$_SERVER["HTTP_HOST"];?>/includes/galeria/index.php?inserir=<?php echo $resultado['id']; ?>&titulo=<?php echo $resultado['titulo']; ?>" title="Inserir fotos"><span class="glyphicon glyphicon-camera"></span></a>
+            <a class="btn btn-info btn-sm" href="http://<?=$_SERVER["HTTP_HOST"];?>/mostra_galeria/<?php echo $resultado['id']; ?>" title="Visualizar"><span class="glyphicon glyphicon-picture"></span></a>
+            <a class="btn btn-warning btn-sm" href="http://<?=$_SERVER["HTTP_HOST"];?>/altera_galeria/<?php echo $resultado['id']; ?>" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-danger btn-sm" href="http://<?=$_SERVER["HTTP_HOST"];?>/apaga_galeria/<?php echo $resultado['id']; ?>" title="Excluir"><span class="glyphicon glyphicon-remove"></span></a>
         </td>
     </tr>
     <?php

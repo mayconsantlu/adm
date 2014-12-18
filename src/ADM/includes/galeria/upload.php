@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../function/slug.php';
-require_once '../config.php';
+require_once '../../config.php';
 
 // A list of permitted file extensions
 $allowed = array('png', 'jpg', 'gif','zip');

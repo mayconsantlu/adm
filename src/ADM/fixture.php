@@ -249,7 +249,7 @@ $conexao -> query("create table if not exists tbl_produtos
 $conexao -> query("truncate table tbl_produtos;");
 // Informando os dados
 $titulo = "Titulo do produto";
-$imagem = "galeria/uploads/sem-imagem.jpg";
+$imagem = "includes/galeria/uploads/sem-imagem.jpg";
 $descricao = "Descrição do produto ou serviço";
 $link = "";
 $valor = "120.90";
@@ -275,7 +275,7 @@ $conexao -> query("truncate table tbl_usuario;");
 
 // cria usuario
 $nome = "Maycon Luczynski";
-$foto = "http://lorempixel.com/200/200/people/9/";
+$foto = "includes/upload_image/usuario/user-base.png";
 $user = 'mayconsantlu';
 $senha = 'Santlu';
 $pass = password_hash( $senha, PASSWORD_DEFAULT );
