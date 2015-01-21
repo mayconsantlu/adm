@@ -1,12 +1,12 @@
 <!-- Header -->
 <header>
-    <div class="container">
+    <!--div class="container">
         <div class="intro-text">
             <div class="intro-lead-in"><br></div>
             <div class="intro-heading"><br></div>
             <a href="#services" class="page-scroll btn btn-xl">Conheça</a>
         </div>
-    </div>
+    </div-->
 </header>
 
 <h3 class="text-center"><?=$url[0]; ?></h3>
@@ -29,7 +29,15 @@
                     </span>
                 <h4 class="service-heading tex">Açoes de relacionamento</h4>
                 <p class="text-muted justify">
-                    Manter um relacionamento positivo com os clientes é algo fundamental para nós. Nossas ações de relacionamento são focadas em manter e estreitar os laços da empresa com os seus clientes, sejam eles os consumidores finais ou os seus próprios funcionários.</p>
+                    <?php
+                    $sobre1 = "Select * from tbl_secao where slug = 'primeira-secao'";
+                    $stmt = $conexao->prepare($sobre1);
+                    $stmt->execute();
+                    $SobreText = $stmt->fetch(PDO::FETCH_ASSOC);
+                    echo $SobreText['texto'];
+                    ?>
+
+                </p>
             </div>
             <div class="col-md-4">
                     <span class="fa-stack fa-4x">

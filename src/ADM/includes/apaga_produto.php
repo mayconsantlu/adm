@@ -156,7 +156,7 @@ if (!empty($_POST)) {
                     <div class="form-group">
                         <button id="confirmar" type="submit" name="confirmar" value="confirmar" class="btn btn-success">
                             Confirmar <em class="glyphicon glyphicon-chevron-right"></em></button>
-                        <a href="produtos" class="btn btn-danger" type="button"><em
+                        <a href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/produtos" class="btn btn-danger" type="button"><em
                                 class="glyphicon glyphicon-chevron-left"></em> Cancelar</a>
                     </div>
                 </div>

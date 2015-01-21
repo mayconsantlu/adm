@@ -3,8 +3,8 @@
 // Verifica se a variável $_POST não é vazia...
 // ou seja: houve um submit no formulário
 $msg = 0;
-if (isset($_GET['editar'])) {
-    $editar = $_GET['editar'];
+if (isset($url[2])) {
+    $editar = $url[2];
 }else {
     $msg = 3;
 }
@@ -23,7 +23,7 @@ if (!empty($_POST)) {
             $descricao      = $_POST['texto'];
 
             $redim = new Redimensiona();
-            $src=$redim->Redimensionar($imagem, 800, "galeria/uploads/produtos");
+            $src=$redim->Redimensionar($imagem, 800, "includes/galeria/uploads/produtos");
 
             $query = "select * from tbl_produtos where id = '$editar';";
             $stmt = $conexao->prepare($query);
@@ -67,7 +67,7 @@ if (!empty($_POST)) {
         </p>
     </div>
     <div class="btn-group btn-group-md panel-body">
-        <a href="produtos" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
+        <a href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/produtos" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
     </div>
 </div>
 
@@ -113,8 +113,8 @@ if (!empty($_POST)) {
                 <h4 class="alert-danger padding border-radius5">A Imagem deve ser selecionada ou irá ficar em branco.</h4>
 
                 <div id="links">
-                    <a href="<?php echo $resultado['imagem']; ?>" title="<?php echo $resultado['titulo']; ?>" data-gallery>
-                        <img src="<?php echo $resultado['imagem']; ?>" alt="<?php echo $resultado['titulo']; ?>" height="60px" class="thumbnail-mostra">
+                    <a href="http://<?=$_SERVER["HTTP_HOST"];?>/<?php echo $resultado['imagem']; ?>" title="<?php echo $resultado['titulo']; ?>" data-gallery>
+                        <img src="http://<?=$_SERVER["HTTP_HOST"];?>/<?php echo $resultado['imagem']; ?>" alt="<?php echo $resultado['titulo']; ?>" height="60px" class="thumbnail-mostra">
                     </a>
                 </div>
 

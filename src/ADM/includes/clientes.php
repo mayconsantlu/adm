@@ -21,9 +21,9 @@ $stmt -> execute();
     <p>Lista de clientes cadastrados no site.</p>
 </div>
 <div class="btn-group btn-group-md">
-    <a href="novo_cliente" class="btn btn-success" type="button"><em class="glyphicon glyphicon-plus-sign"></em> Novo Cliente</a>
+    <a href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/novo_cliente" class="btn btn-success" type="button"><em class="glyphicon glyphicon-plus-sign"></em> Novo Cliente</a>
     <a href="http://<?=$_SERVER["HTTP_HOST"];?>/includes/imprimeCliente.php" target="_blank"  class="btn btn-primary" type="button"><em class="glyphicon glyphicon-print"></em> Imprimir</a>
-    <a href="clientes" class="btn btn-info" type="button"><em class="glyphicon glyphicon-refresh"></em> Atualizar</a>
+    <a href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/clientes" class="btn btn-info" type="button"><em class="glyphicon glyphicon-refresh"></em> Atualizar</a>
 </div>
 <hr />
 <table id="tabela" class="table table-condensed table-hover table-bordered table-responsive border-radius5 display responsive">
@@ -57,8 +57,8 @@ $stmt -> execute();
             <td><?php echo $resultado['telefone']; ?></td>
             <td><?php echo $resultado['obs']; ?></td>
             <td>
-                <a class="btn btn-warning btn-sm" href="altera_cliente?editar=<?php echo $resultado['id']; ?>" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a class="btn btn-danger btn-sm" href="apaga_cliente?apagar=<?php echo $resultado['id']; ?>" title="Excluir"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-warning btn-sm" href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/altera_cliente/<?php echo $resultado['id']; ?>" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a class="btn btn-danger btn-sm" href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/apaga_cliente/<?php echo $resultado['id']; ?>" title="Excluir"><span class="glyphicon glyphicon-remove"></span></a>
             </td>
         </tr>
     <?php

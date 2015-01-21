@@ -82,7 +82,7 @@ if (!empty($_POST)) {
     <p>Nesta página você inserir os dados de contato para o seu site, quanto mais opções para que o seu cliente possa entrar em contato com vocês melhor.</p>
 </div>
 <div class="btn-group btn-group-md">
-    <a href="contato" class="btn btn-info" type="button"><em class="glyphicon glyphicon-refresh"></em> Atualizar</a>
+    <a href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/contato" class="btn btn-info" type="button"><em class="glyphicon glyphicon-refresh"></em> Atualizar</a>
 </div>
 <hr>
 <!-- Alert -->

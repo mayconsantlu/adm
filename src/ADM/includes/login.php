@@ -27,7 +27,7 @@ if (isset($_POST['usuario'])) {
             //$_SESSION['mensagem'] = 'Você esta logago como administrador!';
             //$_SESSION['classe'] = 'alert-success';
             $msg = 1;
-            header("Location: http://localhost:8090/admin");
+            header('Location: http://'.$_SERVER["HTTP_HOST"].'/admin');
         } else {
             unset($_SESSION['usuario']);
             unset($_SESSION['senha']);

@@ -45,7 +45,15 @@ $pegasite = $stmt->fetch(PDO::FETCH_ASSOC);
 <body id="page-top" class="index">
 
     <!-- Navigation -->
+    <?php
+    if (!isset($url[0]) or $url[0] == "") { ?>
     <nav class="navbar navbar-default navbar-fixed-top">
+    <?php
+    } else {?>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+    <?php
+    }
+    ?>
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -55,7 +63,16 @@ $pegasite = $stmt->fetch(PDO::FETCH_ASSOC);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="/"><img src="template/img/logo.png" rel="canonical"></a>
+                <?php
+                if (!isset($url[0]) or $url[0] == "") { ?>
+                    <a class="navbar-brand page-scroll" href="#home"><img src="template/img/logo.png" rel="canonical"></a>
+                <?php
+                } else {?>
+                    <a class="navbar-brand page-scroll" href="/"><img src="template/img/logo.png" rel="canonical"></a>
+                <?php
+                }
+                ?>
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -79,28 +96,6 @@ $pegasite = $stmt->fetch(PDO::FETCH_ASSOC);
                     <li>
                         <a class="page-scroll" href="#contact">Contato</a>
                     </li>
-
-                    <!--  menu
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Serviços<strong class="caret"></strong></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="page-scroll" href="#team">Equipe</a>
-                            </li>
-                            <li>
-                                <a href="#">Another action</a>
-                            </li>
-                            <li>
-                                <a href="#">Something else here</a>
-                            </li>
-                            <li class="divider">
-                            </li>
-                            <li>
-                                <a href="#">Separated link</a>
-                            </li>
-                        </ul>
-                    </li>
-                    menu -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

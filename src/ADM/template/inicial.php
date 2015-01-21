@@ -1,5 +1,5 @@
 <!-- Header -->
-<header>
+<header id="home">
     <div class="container">
         <div class="intro-text">
             <div class="intro-lead-in"><br></div>

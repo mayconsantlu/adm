@@ -4,7 +4,7 @@ html, body {
 }
 
 .sp {margin-bottom: 60px;}
-footer {background-color: #3D473F; color: #ffffff;  padding: 10px; height: 150px; line-height: 120px; }
+footer {background-color: #3D473F; color: #ffffff;  padding: 10px; height: 150px; line-height: 120px; margin-bottom: -15px; }
 .border-radius5 {border-radius: 5px;}
 .padding-rigth {padding-right: 10px;}
 .t-color {background-color: #A3A08F; color: #19171d;}/* #1c4f64  607F83 letra  1c4f64 */

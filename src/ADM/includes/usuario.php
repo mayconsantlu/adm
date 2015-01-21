@@ -25,8 +25,6 @@ if (!empty($_POST)) {
             }
             // compara as senhas
             if ($senha == $senha2) {
-                //$redim = new Redimensiona();
-                //$src = $redim->Redimensionar($imagem, 200, "/upload_image/usuario");
                 $id = 2;
                 $pass = password_hash( $senha, PASSWORD_DEFAULT );
                 $sql1 = "update tbl_usuario set nome = '$nome', usuario = '$usuario', senha = '$pass' where id = :id";
@@ -34,6 +32,7 @@ if (!empty($_POST)) {
                 $stmt -> bindValue(':id', $id);
                 $stmt->execute();
                 $msg = 2;
+                $mensagem = 'Os dados de usuários foram alterados.';
             }else {
                 $msg = 3;
             }

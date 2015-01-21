@@ -24,7 +24,7 @@ $stmt -> execute();
 </div>
 <div class="btn-group btn-group-md">
     <a href="cria_secao" class="btn btn-success" type="button"><em class="glyphicon glyphicon-plus-sign"></em> Nova seção</a>
-    <a href="/secoes" class="btn btn-info" type="button"><em class="glyphicon glyphicon-refresh"></em> Atualizar</a>
+    <a href="secoes" class="btn btn-info" type="button"><em class="glyphicon glyphicon-refresh"></em> Atualizar</a>
 </div>
 <hr />
 <table id="tabela" class="table table-condensed table-hover table-bordered table-responsive border-radius5 display">
@@ -47,8 +47,8 @@ $stmt -> execute();
             <td><?php echo $resultado['titulo']; ?></td>
             <td><?php echo $resultado['slug']; ?></td>
             <td>
-                <a class="btn btn-warning btn-sm" href="altera_secao?editar=<?php echo $resultado['id']; ?>" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a class="btn btn-danger btn-sm" href="apaga_secao?apagar=<?php echo $resultado['id']; ?>" title="Excluir"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-warning btn-sm" href="altera_secao/<?php echo $resultado['id']; ?>" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a class="btn btn-danger btn-sm" href="apaga_secao/<?php echo $resultado['id']; ?>" title="Excluir"><span class="glyphicon glyphicon-remove"></span></a>
             </td>
         </tr>
     <?php

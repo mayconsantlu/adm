@@ -69,7 +69,7 @@ $stmt->execute();
 $config = $stmt->fetch(PDO::FETCH_ASSOC)
 //echo $config['id'];
 ?>
-<form class="form-horizontal" method="post" action="?salvar=sim">
+<form class="form-horizontal" method="post" action="">
 
     <fieldset>
 

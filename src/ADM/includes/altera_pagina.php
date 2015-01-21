@@ -3,8 +3,8 @@
 // Verifica se a variável $_POST não é vazia...
 // ou seja: houve um submit no formulário
 $msg = 0;
-if (isset($_GET['editar'])) {
-    $editar = $_GET['editar'];
+if (isset($url[2])) {
+    $editar = $url[2];
 }else {
     $msg = 3;
 }
@@ -54,7 +54,7 @@ if (!empty($_POST)) {
         </p>
     </div>
     <div class="btn-group btn-group-md panel-body">
-        <a href="paginas" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
+        <a href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/paginas" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
     </div>
 </div>
 

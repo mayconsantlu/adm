@@ -3,8 +3,8 @@
 // Verifica se a variável $_POST não é vazia...
 // ou seja: houve um submit no formulário
 $msg = 0;
-if (isset($_GET['editar'])) {
-    $editar = $_GET['editar'];
+if (isset($url[2])) {
+    $editar = $url[2];
 }else {
     $msg = 3;
 }
@@ -54,7 +54,7 @@ if (!empty($_POST)) {
         </p>
     </div>
     <div class="btn-group btn-group-md panel-body">
-        <a href="galerias" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
+        <a href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/galerias" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
     </div>
 </div>
 
@@ -100,7 +100,8 @@ if (!empty($_POST)) {
                 <input id="titulo" name="titulo" type="text" style="width: 100%" placeholder="Digite o titulo da galeria" class="form-control" value="<?php echo $resultado['titulo']; ?>" >
                 <span class="help-block">* Nome do evento que as fotos foram tiradas</span>
                 <h3>Data do evento</h3>
-                <input id="data" name="data" type="date" style="width: 100%" placeholder="Digite a data do evento" class="form-control" value="<?php echo $resultado['data_evento']; ?>" >
+                <!--input id="data" name="data" type="date" style="width: 100%" placeholder="Digite a data do evento" class="form-control" value="<?php// echo $resultado['data_evento']; ?>" -->
+                <input id="data" name="data" type="text" style="width: 100%" placeholder="Digite a data do evento dd/mm/aaaa" class="form-control" value="<?php echo $resultado['data_evento']; ?>" >
                 <span class="help-block">* Data em que o evento foi realizado</span>
             </div>
             <div class="col-md-8 column">
@@ -113,7 +114,6 @@ if (!empty($_POST)) {
             <div class="col-md-12 column">
                 <div class="form-group">
                     <button id="salvar" type="submit" name="salvar" class="btn btn-success">Salvar</button>
-                    <button id="limpar" type="reset" name="limpar" class="btn btn-warning">Limpar</button>
                 </div>
             </div>
             <hr>

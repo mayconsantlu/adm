@@ -23,7 +23,7 @@ $stmt -> execute();
         </p>
     </div>
     <div class="btn-group btn-group-md panel-body">
-        <a href="galerias" class="btn btn-success" type="button"><em class="glyphicon glyphicon-chevron-left"></em> Voltar</a>
+        <a href="http://<?=$_SERVER["HTTP_HOST"];?>/admin/galerias" class="btn btn-success" type="button"><em class="glyphicon glyphicon-chevron-left"></em> Voltar</a>
     </div>
 </div>
 

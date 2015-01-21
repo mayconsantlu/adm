@@ -91,7 +91,7 @@ if (!empty($_POST)) {
             $contato = $stmt -> fetch(PDO::FETCH_ASSOC)
             //echo $contato['id'];
        ?>
-        <form id="contatofrm" class="form-horizontal" method="post" action="?contato=salvar">
+        <form id="contatofrm" class="form-horizontal" method="post" action="">
             <fieldset>
 
                 <!-- Form Name -->
@@ -144,7 +144,7 @@ if (!empty($_POST)) {
             $orcamento = $stmt -> fetch(PDO::FETCH_ASSOC)
            //echo $orcamento['id'];
         ?>
-        <form class="form-horizontal" id="orcamentofrm"  method="post" action="?orcamento=salvar">
+        <form class="form-horizontal" id="orcamentofrm"  method="post" action="">
             <fieldset>
 
                 <!-- Form Name -->

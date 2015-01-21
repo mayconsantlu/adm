@@ -4,8 +4,8 @@
 // ou seja: houve um submit no formulário
 
 $msg = 0;
-if (isset($_GET['apagar'])) {
-    $apagar = $_GET['apagar'];
+if (isset($url[2])) {
+    $apagar = $url[2];
 }else {
     $msg = 3;
 }
@@ -45,7 +45,7 @@ if (!empty($_POST)) {
         </p>
     </div>
     <div class="btn-group btn-group-md panel-body">
-        <a href="secoes" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
+        <a href="/admin/secoes" class="btn btn-danger" type="button"><em class="glyphicon glyphicon-ban-circle"></em> Cancelar / Voltar</a>
     </div>
 </div>
 
@@ -107,7 +107,7 @@ if (!empty($_POST)) {
                     <div class="form-group">
                         <button id="confirmar" type="submit" name="confirmar" value="confirmar" class="btn btn-success">
                             Confirmar <em class="glyphicon glyphicon-chevron-right"></em></button>
-                        <a href="/galerias" class="btn btn-danger" type="button"><em
+                        <a href="/admin/secoes" class="btn btn-danger" type="button"><em
                                 class="glyphicon glyphicon-chevron-left"></em> Cancelar</a>
                     </div>
                 </div>
